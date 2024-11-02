@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>じゃんけん</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+  <link rel="stylesheet" href="css/janken.css">
+</head>
+
+<body>
+  <main>
+
+    <section>
+      <h1>じゃんけん</h1>
+    </section>
+
+    <section id="aite">
+      <p>コンピュータの手は？？</p>
+    </section>
+
+    <section id="result">
+      <p>勝敗は？？</p>
+    </section>
+
+    <section>
+      <button id="jk_type1">グー</button>
+      <button id="jk_type2">チョキ</button>
+      <button id="jk_type3">パー</button>
+    </section>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> //JQueryライブラリ読み込み
+  <script>
+    //グーボタン押したとき
+    $("#jk_type1").on("click", function () {
+      // 相手は
+      // 0:グー
+      // 1:チョキ
+      // 2:パー
+      const randomNumber = Math.floor(Math.random() * 3);// 0から2までのどれか
+      console.log(randomNumber);
+
+      if(randomNumber === 0){
+        $("#aite").text("グー");
+        $("#result").text("あいこ");
+      }else if(randomNumber === 1){
+        $("#aite").text("チョキ");
+        $("#result").text("勝ち");
+      }else{
+        $("#aite").text("パー");
+        $("#result").text("負け");
+      }
+    });
+
+  </script>
+</body>
+
+</html>
