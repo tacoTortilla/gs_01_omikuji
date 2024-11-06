@@ -96,8 +96,12 @@
     let jk_My = new Array(array_num);
 
 
+
+
     //Startボタンを押したときに 相手の手を順番に表示する部分
     $("#botton_1").on("click", function () {
+
+      let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
 
       for(let i = 0; i < 10; i++){
         $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
