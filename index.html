@@ -91,13 +91,17 @@
  
     const imgnum = ["#img01","#img02","#img03","#img04","#img05","#img06","#img07","#img08","#img09","#img10"]
     const imgnumMy = ["#img11","#img12","#img13","#img14","#img15","#img16","#img17","#img18","#img19","#img20"]
-    let array_num = 10;//変数として追加し　数を増やす対応
+    let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
     let jk_aite = new Array(array_num);
     let jk_My = new Array(array_num);
 
 
     //Startボタンを押したときに 相手の手を順番に表示する部分
     $("#botton_1").on("click", function () {
+
+      for(let i = 0; i < 10; i++){
+        $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
+      }   
 
       click_num = 0;
       $("#title01").text("相手のじゃんけんを覚えましょう");
@@ -147,7 +151,7 @@
           console.log("click_num:",click_num);
           console.log("jk_My[]:",jk_My[click_num]);
 
-          for(let i = 0; i < array_num; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
   
@@ -181,7 +185,7 @@
           $(imgnumMy[click_num]).attr('src', 'images/jk_type2.jpg');
           jk_My[click_num] = 1;
 
-          for(let i = 0; i < array_num; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
 
@@ -216,7 +220,7 @@
           $(imgnumMy[click_num]).attr('src', 'images/jk_type3.jpg');
           jk_My[click_num] = 2;
 
-          for(let i = 0; i < array_num; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
 
