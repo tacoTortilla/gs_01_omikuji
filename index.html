@@ -44,15 +44,25 @@
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img03"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img04"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img05"></div>
-    </div>
-
-    <div class="img_table1">
-      <div><img src="images/factory06.jpg" class="small_image_width100pix"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img06"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img07"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img08"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img09"></div>
       <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img10"></div>
+    </div>
+
+    <div class="img_table1">
+      <div><img src="images/factory06.jpg" class="small_image_width100pix"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img11"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img12"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img13"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img14"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img15"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img16"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img17"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img18"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img19"></div>
+      <div><img src="images/jk_type0.jpg" class="small_image_width100pix" id="img20"></div>
     </div>
 
     <div class="titleB">
@@ -79,13 +89,19 @@
     //constで定義した変数は再代入できないので、代入が必要であればletを使って変数を定義する
     let click_num = 0; //クリック回数カウント
  
-    const imgnum = ["#img01","#img02","#img03","#img04","#img05"]
-    const imgnumMy = ["#img06","#img07","#img08","#img09","#img10"]
-    let jk_aite = new Array(5);
-    let jk_My = new Array(5);
+    const imgnum = ["#img01","#img02","#img03","#img04","#img05","#img06","#img07","#img08","#img09","#img10"]
+    const imgnumMy = ["#img11","#img12","#img13","#img14","#img15","#img16","#img17","#img18","#img19","#img20"]
+    let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
+    let jk_aite = new Array(array_num);
+    let jk_My = new Array(array_num);
+
 
     //Startボタンを押したときに 相手の手を順番に表示する部分
     $("#botton_1").on("click", function () {
+
+      for(let i = 0; i < 10; i++){
+        $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
+      }   
 
       click_num = 0;
       $("#title01").text("相手のじゃんけんを覚えましょう");
@@ -94,7 +110,7 @@
       $("#title05").text("START");
       $(titleImg).attr('src', 'images/factory08.jpg');
 
-      for(let i = 0; i < 5; i++){
+      for(let i = 0; i < array_num; i++){
         let randomNumber1 = Math.floor(Math.random() * 3);// 0から2までのどれか
         console.log(randomNumber1);
   
@@ -116,7 +132,7 @@
         }
       }
 
-      for(let i = 0; i < 5; i++){
+      for(let i = 0; i < array_num; i++){
           $(imgnumMy[i]).attr('src', 'images/jk_type0.jpg');
       }    
 
@@ -129,13 +145,13 @@
 
 
       $("#jk_type1").on("click", function () {
-        if(click_num < 5){
+        if(click_num < array_num){
           $(imgnumMy[click_num]).attr('src', 'images/jk_type1.jpg');
           jk_My[click_num] = 0;
           console.log("click_num:",click_num);
           console.log("jk_My[]:",jk_My[click_num]);
 
-          for(let i = 0; i < 5; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
   
@@ -144,7 +160,7 @@
           if(jk_aite[click_num] === 1){
             $("#title05").text("〇");
 
-            if(click_num ===4){
+            if(click_num ===(array_num - 1)){
               $(titleImg).attr('src', 'images/ok_cheese.jpg');
               $("#title01").text("製造成功");
               $("#title02").text("GooD！！");
@@ -157,7 +173,7 @@
             $("#title01").text("製造失敗");
             $("#title02").text("！！");
             $("#title03").text("工程が壊れました、品質問題発生です");
-            click_num = 5;
+            click_num = array_num;
           }
 
           click_num++;
@@ -165,11 +181,11 @@
       });
 
       $("#jk_type2").on("click", function () {
-        if(click_num < 5){
+        if(click_num < array_num){
           $(imgnumMy[click_num]).attr('src', 'images/jk_type2.jpg');
           jk_My[click_num] = 1;
 
-          for(let i = 0; i < 5; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
 
@@ -177,7 +193,7 @@
           if(jk_aite[click_num] === 2){
             $("#title05").text("〇");
 
-            if(click_num ===4){
+            if(click_num === (array_num -1)){
               $(titleImg).attr('src', 'images/ok_cheese.jpg');
               $("#title01").text("製造成功");
               $("#title02").text("調子良し");
@@ -190,7 +206,7 @@
             $("#title01").text("製造失敗");
             $("#title02").text("！！");
             $("#title03").text("工程が壊れました、品質問題発生です");
-            click_num = 5;
+            click_num = array_num;
           }
 
           console.log("click_num:",click_num);
@@ -200,11 +216,11 @@
       });
 
       $("#jk_type3").on("click", function () {
-        if(click_num < 5){
+        if(click_num < array_num){
           $(imgnumMy[click_num]).attr('src', 'images/jk_type3.jpg');
           jk_My[click_num] = 2;
 
-          for(let i = 0; i < 5; i++){
+          for(let i = 0; i < 10; i++){
             $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
           }    
 
@@ -212,7 +228,7 @@
           if(jk_aite[click_num] === 0){
             $("#title05").text("〇");
             
-            if(click_num ===4){
+            if(click_num === (array_num -1)){
                 $(titleImg).attr('src', 'images/ok_cheese.jpg');
                 $("#title01").text("製造成功");
                 $("#title02").text("パーフェクト");
@@ -225,7 +241,7 @@
             $("#title01").text("製造失敗");
             $("#title02").text("！！");
             $("#title03").text("工程が壊れました、品質問題発生です");
-            click_num = 5;
+            click_num = array_num;
           }
           console.log("click_num:",click_num);
           console.log("jk_My[]:",jk_My[click_num]);
