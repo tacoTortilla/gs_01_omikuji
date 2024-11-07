@@ -70,7 +70,8 @@
     </div>
 
     <section>
-      <button id="botton_1">Start</button>
+      <button id="botton_0">レベル変更</button>
+      <button id="botton_1">じゃんけんStart</button>
       <button id="jk_type1" class="jk_type_button">グー</button>
       <button id="jk_type2" class="jk_type_button">チョキ</button>
       <button id="jk_type3" class="jk_type_button">パー</button>
@@ -91,12 +92,14 @@
  
     const imgnum = ["#img01","#img02","#img03","#img04","#img05","#img06","#img07","#img08","#img09","#img10"]
     const imgnumMy = ["#img11","#img12","#img13","#img14","#img15","#img16","#img17","#img18","#img19","#img20"]
-    let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
+    let array_num = Math.floor(Math.random() * 10) + 1;// 0から10までのどれか
     let jk_aite = new Array(array_num);
     let jk_My = new Array(array_num);
 
-
-
+    //Startボタンを押したときにリロード
+    $("#botton_0").on("click", function () {
+        location.reload();
+    });
 
     //Startボタンを押したときに 相手の手を順番に表示する部分
     $("#botton_1").on("click", function () {
@@ -105,7 +108,7 @@
         $(imgnum[i]).attr('src', 'images/jk_type0.jpg');
       }   
 
-      let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
+      // let array_num = Math.floor(Math.random() * 10) + 1;// 0から2までのどれか
 
       click_num = 0;
       $("#title01").text("相手のじゃんけんを覚えましょう");
