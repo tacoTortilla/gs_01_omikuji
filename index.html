@@ -168,7 +168,7 @@
             $("#title05").text("〇");
 
             if(click_num ===(array_num - 1)){
-              $(titleImg).attr('src', 'images/ok_cheese.jpg');
+              $(titleImg).attr('src', 'images/ok_cheese01.jpg');
               $("#title01").text("製造成功　GooD！！");
               $("#title02").text("美味しいチーズができました");
               // リンク先のURLを指定
@@ -181,9 +181,9 @@
           }else{
             $("#title05").text("ｘ");
             $(titleImg).attr('src', 'images/factory10.jpg');
-            $("#title01").text("製造失敗");
+            $("#title01").text("製造失敗　チーズがでっかくなっちゃった");
             $("#title02").text("！！");
-            $("#title03").text("工程が壊れました、品質問題発生です");
+            $("#title03").text("マシンの調子がおかしい、メンテナンス時期のお知らせです");
 
             click_num = array_num;
           }
@@ -206,18 +206,22 @@
             $("#title05").text("〇");
 
             if(click_num === (array_num -1)){
-              $(titleImg).attr('src', 'images/ok_cheese.jpg');
-              $("#title01").text("製造成功");
-              $("#title02").text("調子良し");
-              $("#title03").text("美味しいチーズができました");
+              $(titleImg).attr('src', 'images/ok_cheese02.jpg');
+              $("#title01").text("製造成功？？　GooD！！");
+              $("#title02").text("美味しいチーズができたはずですが・・");
+              // リンク先のURLを指定
+              const url = "https://tacotortilla.github.io/gs_00_cheese_academy/#section6";
+              // リンクのHTMLを生成して表示
+              const linkContainer = document.getElementById("title03");
+              linkContainer.innerHTML = `<a href="${url}" target="_blank">チーズの製造の重要ポイントはこちら</a>`;
             }
 
           }else{
             $("#title05").text("ｘ");
-            $(titleImg).attr('src', 'images/factory10.jpg');
-            $("#title01").text("製造失敗");
+            $(titleImg).attr('src', 'images/factory11.jpg');
+            $("#title01").text("製造失敗　ばれてますよ");
             $("#title02").text("！！");
-            $("#title03").text("工程が壊れました、品質問題発生です");
+            $("#title03").text("人的問題発生です");
             click_num = array_num;
           }
 
@@ -241,16 +245,20 @@
             $("#title05").text("〇");
             
             if(click_num === (array_num -1)){
-                $(titleImg).attr('src', 'images/ok_cheese.jpg');
-                $("#title01").text("製造成功");
-                $("#title02").text("パーフェクト");
-                $("#title03").text("美味しいチーズができました");
-            }
+                $(titleImg).attr('src', 'images/ok_cheese03.jpg');
+                $("#title01").text("製造成功　GooD！！");
+                $("#title02").text("キャラクターで拡販だ！");
+                // リンク先のURLを指定
+                const url = "https://tacotortilla.github.io/gs_00_cheese_academy/#section6";
+                // リンクのHTMLを生成して表示
+                const linkContainer = document.getElementById("title03");
+                linkContainer.innerHTML = `<a href="${url}" target="_blank">チーズの製造の重要ポイントはこちら</a>`;
+              }
 
           }else{
             $("#title05").text("ｘ");
-            $(titleImg).attr('src', 'images/factory10.jpg');
-            $("#title01").text("製造失敗");
+            $(titleImg).attr('src', 'images/factory12.jpg');
+            $("#title01").text("製造失敗　うしが・・");
             $("#title02").text("！！");
             $("#title03").text("工程が壊れました、品質問題発生です");
             click_num = array_num;
