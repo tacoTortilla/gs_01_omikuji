@@ -31,6 +31,11 @@ section {
 	width: 100px; /* 幅は100ピクセルに設定 */
 }
 
+.small_image_width70pix {
+	height: auto; /* 高さは自動調整して縦横比を維持 */
+	width: 70px; /* 幅は100ピクセルに設定 */
+}
+
 .small_image_width460pix {
 	height: auto; /* 高さは自動調整して縦横比を維持 */
 	width: 460px; /* 幅は100ピクセルに設定 */
