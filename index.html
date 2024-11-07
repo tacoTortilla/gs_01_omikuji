@@ -169,9 +169,13 @@
 
             if(click_num ===(array_num - 1)){
               $(titleImg).attr('src', 'images/ok_cheese.jpg');
-              $("#title01").text("製造成功");
-              $("#title02").text("GooD！！");
-              $("#title03").text("美味しいチーズができました");
+              $("#title01").text("製造成功　GooD！！");
+              $("#title02").text("美味しいチーズができました");
+              // リンク先のURLを指定
+              const url = "https://tacotortilla.github.io/gs_00_cheese_academy/#section6";
+              // リンクのHTMLを生成して表示
+              const linkContainer = document.getElementById("title03");
+              linkContainer.innerHTML = `<a href="${url}" target="_blank">チーズの製造の重要ポイントはこちら</a>`;
             }
 
           }else{
