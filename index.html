@@ -182,8 +182,12 @@
             $("#title05").text("ｘ");
             $(titleImg).attr('src', 'images/factory10.jpg');
             $("#title01").text("製造失敗　チーズがでっかくなっちゃった");
-            $("#title02").text("！！");
-            $("#title03").text("マシンの調子がおかしい、メンテナンス時期のお知らせです");
+            $("#title02").text("マシンの調子がおかしい、メンテナンス時期のお知らせです");
+            // リンク先のURLを指定
+            const url = "https://tacotortilla.github.io/gs_03_memopad/";
+            // リンクのHTMLを生成して表示
+            const linkContainer = document.getElementById("title03");
+            linkContainer.innerHTML = `<a href="${url}" target="_blank">失敗をメモしよう</a>`;
 
             click_num = array_num;
           }
@@ -220,8 +224,12 @@
             $("#title05").text("ｘ");
             $(titleImg).attr('src', 'images/factory11.jpg');
             $("#title01").text("製造失敗　ばれてますよ");
-            $("#title02").text("！！");
-            $("#title03").text("人的問題発生です");
+            $("#title02").text("人的問題発生です");
+            // リンク先のURLを指定
+            const url = "https://tacotortilla.github.io/gs_03_memopad/";
+            // リンクのHTMLを生成して表示
+            const linkContainer = document.getElementById("title03");
+            linkContainer.innerHTML = `<a href="${url}" target="_blank">このやらかしをメモしよう</a>`;
             click_num = array_num;
           }
 
@@ -259,8 +267,13 @@
             $("#title05").text("ｘ");
             $(titleImg).attr('src', 'images/factory12.jpg');
             $("#title01").text("製造失敗　うしが・・");
-            $("#title02").text("！！");
-            $("#title03").text("工程が壊れました、品質問題発生です");
+            $("#title02").text("工程が壊れました、品質問題発生です");
+            
+            // リンク先のURLを指定
+            const url = "https://tacotortilla.github.io/gs_03_memopad/";
+            // リンクのHTMLを生成して表示
+            const linkContainer = document.getElementById("title03");
+            linkContainer.innerHTML = `<a href="${url}" target="_blank">こんな日はメモしよう</a>`;            
             click_num = array_num;
           }
           console.log("click_num:",click_num);
